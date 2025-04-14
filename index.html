@@ -23,7 +23,7 @@
 
             // If query is not empty, redirect to Google search
             if (query) {
-                const searchUrl = `https://google.com/search?q=${encodeURIComponent(query.replace(/ /g, '+'))}`;
+                const searchUrl = `https://google.com/search?q=${query}`;  // Corrected here
                 window.location.href = searchUrl;
             } else {
                 alert("Please enter a search term.");
@@ -71,4 +71,3 @@
 
 </body>
 </html>
-
