@@ -1,0 +1,36 @@
+<title>Unreachable Site</title>
+
+<h1>This website is currently down or unreachable.</h1>
+
+<h1> </h1>
+
+<button id="homeButton">Back to home</button>
+
+<script>
+    document.getElementById("homeButton").addEventListener(`click`, function() {
+        window.location.href = "https://electrotato.github.io/index.html"
+    })
+</script>
+
+<style>
+    body {
+        background-color: rgb(32, 32, 32);
+        -webkit-text-fill-color: rgb(255, 255, 255);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        
+    }
+
+    #homeButton {
+        background-color: gray;
+        padding: 6px 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        transform-origin: center;
+        outline: none;
+        box-shadow: none;
+    }
+
+    #homeButton:hover {
+        padding: 4px 4px;
+    }
+</style>
