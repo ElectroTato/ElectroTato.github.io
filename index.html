@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Tab</title>
+</head>
+<body>
+
+    <h1>Welcome to TatoBrowse!</h1>
+
+    <input id="box" type="text" placeholder="Search.." />
+
+    <h1 id="searchResult"></h1>
+
+    <script>
+        // Get the input element
+        const searchBox = document.getElementById('box');
+
+        // Function that runs when Enter is pressed
+        function handleSearch() {
+            const query = searchBox.value.trim();
+
+            // If query is not empty, redirect to Google search
+            if (query) {
+                const searchUrl = `https://google.com/search?q=${encodeURIComponent(query.replace(/ /g, '+'))}`;
+                window.location.href = searchUrl;
+            } else {
+                alert("Please enter a search term.");
+            }
+        }
+
+        // Add event listener for the Enter key (key code 13)
+        searchBox.addEventListener('keydown', function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();  // Prevent the default action (e.g., form submission)
+                handleSearch();          // Call the search function
+            }
+        });
+    </script>
+
+    <style>
+        body {
+            background-color: rgb(32, 32, 32);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        #box {
+            background-color: gray;
+            color: black;
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        #box:focus {
+            background-color: #444;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+    </style>
+
+</body>
+</html>
 
